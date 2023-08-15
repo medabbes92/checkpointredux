@@ -1,5 +1,5 @@
-import { complete } from "./actions";
-import { addtask, completetask, deletetask, edittask } from "./actionstypes";
+
+import { addtask, completetask, deletetask, edittask, filtertask } from "./actionstypes";
 
 const todos = {
   tasks: [
@@ -32,6 +32,11 @@ const Reducer  =(state = todos , {type ,payload}) => {
                     return {
                         ...state , tasks : state.tasks.map(el=>el.id === payload.id ? payload : el) 
                     }
+
+                    case filtertask:
+                        return {
+                            ...state , filter : !state.filter
+                        }
 
         default:
           return state 

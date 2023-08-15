@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
-import { add } from './redux/actions'
+import { add, filter } from './redux/actions'
+
 
 const Addtask = () => {
     const [text, setText] = useState("")
@@ -14,8 +15,9 @@ const handleSubmit =(e) =>
 {
     e.preventDefault()
     
-    dispatch (add(text))
-    text.trim() === "" ? alert ("write your todo") : add (text) ;
+    
+    text.trim() === "" ? alert ("write your todo") : dispatch (add(text)) ;
+    
     setText("")  ;
     
 }
@@ -28,6 +30,7 @@ const handleSubmit =(e) =>
             <button type='submit'> Add Task </button>
 
         </form>
+        <button onClick={() => dispatch(filter()) }>Filter</button>
     </div>
   )
 }

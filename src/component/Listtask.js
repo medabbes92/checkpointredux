@@ -4,13 +4,14 @@ import Task from './Task'
 
 const Listtask = () => {
 
-const { tasks } = useSelector (state=>state)
+const { tasks , filter } = useSelector (state=>state)
 
   return (
     <div>
-        {
+        { filter ? tasks.filter((el)=> el.isDone === false)
+        .map ((el)=> <Task  key ={el.id} el ={el}/>)
 
-            tasks.map(el=> <Task  key ={el.id} el ={el}/>)
+            :tasks.map(el=> <Task  key ={el.id} el ={el}/>)
         }
     </div>
   )

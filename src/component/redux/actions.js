@@ -1,4 +1,4 @@
-import { addtask, completetask, deletetask, edittask } from "./actionstypes"
+import { addtask, completetask, deletetask, edittask, filtertask } from "./actionstypes"
 
 export const Delete =(id)=> {
 return {
@@ -26,3 +26,8 @@ export const taskEdit=(editeTask) => {
         payload : editeTask
     }
 }
+export const filter =(isDone)=> {
+    return {
+        type: filtertask,
+        payload : isDone }
+    }
