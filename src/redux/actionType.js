@@ -1,0 +1,5 @@
+export const DELETETASK= 'DELETETASK'
+export const ADDTASK= 'ADDTASK'
+export const EDITTASK='EDITTASK'
+export const COMPLETETASK= 'COMPLETETASK'
+export const FILTERTASK ='FILTERTASK'

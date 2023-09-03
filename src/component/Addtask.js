@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
-import { add, filter } from './redux/actions'
+import { add, filter } from '../redux/action'
+
 
 
 const Addtask = () => {

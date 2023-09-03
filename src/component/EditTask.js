@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { taskEdit } from './redux/actions';
+// import { taskEdit } from './redux/actions';
 import { Button, Modal } from 'react-bootstrap';
+import { taskEdit } from '../redux/action';
 
 const EditTask = ({task}) => {
 

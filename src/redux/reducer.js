@@ -1,5 +1,7 @@
 
-import { addtask, completetask, deletetask, edittask, filtertask } from "./actionstypes";
+// import { addtask, completetask, deletetask, edittask, filtertask } from "./actionstypes";
+
+import { ADDTASK, COMPLETETASK, DELETETASK, EDITTASK, FILTERTASK} from "./actionType";
 
 const todos = {
   tasks: [
@@ -15,25 +17,25 @@ const Reducer  =(state = todos , {type ,payload}) => {
     const newtodo = {id: Math.random(), action: payload, isDone: false}
    
     switch (type) {
-        case deletetask:
+        case DELETETASK:
             return {
                 ...state , tasks : state.tasks.filter(el=>el.id!==payload)
             }
-            case completetask:
+            case COMPLETETASK:
                 return {
                     ...state , tasks : state.tasks.map(el=> el.id=== payload ? {...el , isDone : !el.isDone} : el )
                 }
-                case addtask:
+                case ADDTASK:
                 return {
                     ...state , tasks : [...state.tasks, newtodo] 
                 }
 
-                case edittask:
+                case EDITTASK:
                     return {
                         ...state , tasks : state.tasks.map(el=>el.id === payload.id ? payload : el) 
                     }
 
-                    case filtertask:
+                    case FILTERTASK:
                         return {
                             ...state , filter : !state.filter
                         }

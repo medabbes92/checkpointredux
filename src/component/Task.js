@@ -1,7 +1,8 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { Delete, complete } from './redux/actions';
+// import { Delete, complete } from './redux/actions';
 import EditTask from './EditTask';
+import { Delete, complete } from '../redux/action';
 
 const Task = ({ el }) => {
   const dispatch = useDispatch();
